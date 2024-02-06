@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Titan+One&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --primary-color: hsl(359, 100%, 35%);
+  --primary-color-alt: hsl(359, 100%, 25%);
+  --title-color: hsl(19, 16%, 15%);
+  --text-color: hsl(19, 16%, 35%);
+  --text-color-light: hsl(19, 8%, 55%);
+  --body-color: hsl(36, 52%, 87%);
+  --container-color: hsl(19, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --title-font: "Titan One", cursive;
+  --subtitle-font: "Dancing Script", cursive;
+
+  --font-2xl: 2.5rem;
+  --font-xl: 2rem;
+  --font-lg: 1.25rem;
+  --font-md: 1rem;
+  --font-sm: 0.938rem;
+  --font-xm: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+
+/*~~~~~~~~~~~~~~~ BUTTON ~~~~~~~~~~~~~~~*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--primary-color);
+  padding: 1rem 1.5rem;
+  border-radius: 4rem;
+  color: #fff;
+  font-weight: var(--font-medium);
+  transition: background 0.3s;
+}
+
+.button i {
+  font-size: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  background-color: var(--primary-color-alt);
+}
+
+.button:hover i {
+  transform: translateX(0.25rem);
+}
+
+
+
+body {
+    padding: 50px;
+    background-color: var(--body-color);
+  }
+
+  #pizza-builder {
+    padding: 25px 50px;
+    background-color: var(--body-color);
+  }
+  
+  .sizes, .cheese, .toppings, .meats, .non-meats, #pizza-price, .pizza-cost, .details {
+    display: none;
+  }
+  
+  .details {
+    position: absolute;
+  }
+  
+  .pizza-image {
+    width: 200px;
+    background: url("pizza.jpg") no-repeat;
+    background-position: center;
+    height: 125px;
+  }
+  
+  .pizza-xs {
+    background-size: 20%;
+  }
+  
+  .pizza-sm {
+    background-size: 40%;
+  }
+  
+  .pizza-md {
+    background-size: 60%;
+  }
+  
+  .pizza-lg {
+    background-size: 80%;
+  }
+  
+  .pizza-xl {
+    background-size: 100%;
+  }
+  
+  
+  .clickable:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  
+  .pizza {
+    width: 500px;
+    height: 200px;
+  }
+  
+  .remove {
+    position:absolute;
+    left: -20px;
+  }
+  
+  button:focus {
+    outline: 0 !important;
+  }
+  
+  #added-pizzas {
+    display: none;
+  }
+  
+  #pizza-count {
+    position:absolute;
+    top: -23px;
+    left: 5px;
+  }
+  
+  #instruction-popup {
+    position: fixed;
+    width: 400px;
+    bottom: 100px;
+    right: 100px;
+    display: none;
+  }
+  
+  #modal-checkout {
+    z-index: 10;
+    display: inline-block;
+    position: relative;
+    width:600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  /*~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~*/
+.footer {
+  padding-block: 3rem 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding-block: 8rem 3rem;
+  }
+}
+
+
+.footer__container {
+  row-gap: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__container {
+    position: relative;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+}
+
+
+.footer__logo {
+  margin-bottom: 1rem;
+}
+
+.footer__description,
+.footer__link,
+.footer__information {
+  font-size: var(--font-xm);
+}
+
+.footer__content,
+.footer__links {
+  display: grid;
+}
+
+.footer__content {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 340px) {
+  .footer__content {
+    gap: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__content {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__content {
+    column-gap: 4rem;
+  }
+}
+
+
+
+.footer__title {
+  font-size: var(--font-md);
+  margin-bottom: 1.5rem;
+}
+
+.footer__links {
+  row-gap: 0.5rem;
+}
+
+.footer__link {
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__title,
+  .footer__description,
+  .footer__link,
+  .footer__information {
+    font-size: var(--font-sm);
+  }
+}
+
+
+.footer__social {
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.footer__social-link {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer__social-link:hover {
+  color: var(--primary-color-alt);
+  transform: translateY(-2px);
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__social-link {
+    font-size: 1.5rem;
+  }
+}
+
+
+.footer__copy {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: var(--font-xm);
+  color: var(--text-color-light);
+}
